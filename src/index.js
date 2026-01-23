@@ -9,22 +9,12 @@ import connectDB from './db/index.js'
 
 
 connectDB() 
+.then(() => {
+    app.listen(process.env.PORT || 8000, () =>{
+        console.log(`the server is lsiting: ${process.env.PORT}`)
+    })
 
-/*
- ( async () => {
-    try {
-       await mongoose.connect("{process.env.mongoose_url}/ {DB_NAME}")
-       app.on("error" , (error) => {
-         console.log("ERROR:" , error);
-         throw error
-       })
-       app.listen(process.env.port,() => {
-          console.log("app is listening on port {process.env.port}")
-       })
-    } catch (error) {
-        console.log("ERROR" , error)
-        throw error
-        
-    }
- })()
-*/
+})
+.catch((err) => {
+    console.log("DB is not connect",err);
+})
