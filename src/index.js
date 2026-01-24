@@ -2,8 +2,13 @@ import dotenv from 'dotenv';
 dotenv.config({ 
     path: '/.env'
  });
+
+import app from "./app.js" //to connect app
+
  import dns from 'node:dns';
 dns.setServers(['8.8.8.8', '8.8.4.4']); // Force Google DNS
+
+
 import connectDB from './db/index.js'
 
 
