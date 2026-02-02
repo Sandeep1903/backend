@@ -5,7 +5,6 @@ const db_talk = (fn) =>  async(req , res , next) => {
         res.status(error.code || 500)
     }
 }
-
 export default db_talk
 
 /*  2nd Method 
